@@ -14,8 +14,23 @@
 
     .heading-container {
       position: absolute;
-      bottom: 60px;
+      bottom: 1px;
       left: 0;
+      background: rgba(0,82,157, 0.8);
+      padding: 40px 30px;
+      color: #D8D8D8;
+      border: 1px #979797 solid;
+      border-bottom:8px red solid;
+
+      .heading-title{
+        margin: 0
+      }
+    }
+  }
+
+  .related-content-quarter{
+    .content-list{
+
     }
   }
 

@@ -9,37 +9,52 @@
 
 {% block content %}
 
-<section class="hero hero-generic with-flag" id="hero-section" style="background-image: url({% static 'images/placeholder.png' %})">
+<section class="hero hero-generic" id="hero-section" style="background-image: url({% static 'images/landing-hero-image.jpg' %})">
   <div class="container wrap-tight">
     <div class="heading-container">
-      <h1 class="heading-xlarge">Home</h1>
+      <h1 class="heading-xlarge heading-title">We are open.<br> The UK welcomes<br> international businesses.</h1>
     </div>
   </div>
+</section>
+
+<section id="body-description" class="body-description padding-vertical-60">
+	<div class="container">
+		<div class="grid-row">
+			<div class="column-three-quarters">
+				<section class="grid-row">
+					<div class="column-seven-ninths article-content">
+						{{ page.tariffs_description|add_export_elements_classes }}
+					</div>
+				</section>
+			</div>
+			{{ related_pages }}
+      {% block related_content %}
+        {% include 'core/includes/landing_related_content_list.html' with related_page_one=related_page_one%}
+      {% endblock %}
+
+		</div>
+	</div>
 </section>
 
 <section id="invest-fas-section" class="invest-fas-section background-stone-gradient-bottom padding-vertical-60">
   <div class="container">
     <div class="card-grid">
-      <div class="column-half">
+      <div class="column-quarter">
         {% static 'images/placeholder.png' as card_image %}
         <div class="card " id="invest-card">
           <div class="card-image" role="image" style="background-image: url({% static 'images/placeholder.png' %});" id="invest-card-image"></div>
           <div class="card-inner wrap-tight">
             <h2 class="heading-large">Invest in the UK</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <a href="#" class="link with-arrow">Expand to the UK</a>
             <a href="#" class="link with-arrow">Capital investment in the UK</a>
           </div>
         </div>
       </div>
-      <div class="column-half">
+      <div class="column-quarter">
         {% static 'images/placeholder.png' as card_image %}
         <div class="card " id="fas-card">
           <div class="card-image" role="image" style="background-image: url({% static 'images/placeholder.png' %});" id="fas-card-image"></div>
           <div class="card-inner wrap-tight padding-horizontal-45">
             <h2 class="heading-large">Find a UK supplier</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <a href="{{ services_urls.fas }}" class="link with-arrow">Connect with UK businesses</a>
             <a href="#" class="link with-arrow">Explore UK industries</a>
           </div>
         </div>
