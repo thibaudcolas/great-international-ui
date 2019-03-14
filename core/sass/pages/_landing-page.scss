@@ -7,6 +7,7 @@
 .landing-page {
   .hero {
     overflow: visible;
+    background-position: top left;
 
     .container {
       position: relative;
@@ -16,42 +17,61 @@
       position: absolute;
       bottom: 1px;
       left: 0;
-      background: rgba(0,82,157, 0.8);
-      padding: 40px 30px;
-      color: #D8D8D8;
-      border: 1px #979797 solid;
-      border-bottom:8px red solid;
+      background: rgba(0,82,157,0.8);
+      padding: 24px 30px 30px 30px;
+      color: #ffffff;
+      border-bottom: 6px #B00D23 solid;
+    }
+  }
 
-      .heading-title{
-        margin: 0
+  .international-invest-section{
+    background: #f5f2ed;
+    margin-top: 30px;
+  }
+
+  .body-description{
+    .heading-large{
+      font-size: 36px;
+      font-family: $brand-font-alternative;
+      font-weight: 400;
+    }
+
+    .body-text{
+      font-size: 24px;
+    }
+  }
+
+  .content-list{
+    .heading {
+      margin-bottom: 0.8em;
+    }
+
+    li{
+      margin-bottom: 15px;
+    }
+  }
+
+  .international-invest-section {
+    .card {
+      flex-grow: 1;
+      border: 2px #EFEAE1 solid;
+      .heading-large {
+        letter-spacing: 0.1;
       }
     }
-  }
-
-  .related-content-quarter{
-    .content-list{
-
-    }
-  }
-
-  .invest-fas-section {
-    .card .card-image {
-      height: 300px;
+    .card {
+      .card-image {
+        height: 300px;
+      }
+      .card-inner{
+        padding: 30px;
+      }
     }
   }
 
   .study-visit-cta-section > .container {
     border-bottom: 1px solid $lightened-great-blue;
   }
-
-  .card {
-    flex-grow: 1;
-
-    .heading-large {
-      letter-spacing: 0.1;
-    }
-  }
-
 }
 
 @media (max-width: 768px) {

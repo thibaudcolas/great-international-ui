@@ -6,13 +6,17 @@
 {% load card hero add_export_elements_classes from directory_components_tags %}
 
 {% block css_layout_class %}landing-page{% endblock %}
+{% block body_header %}
+  {% include 'core/includes/header_no_country_select.html' %}
+{% endblock %}
 
 {% block content %}
-
 <section class="hero hero-generic" id="hero-section" style="background-image: url({% static 'images/landing-hero-image.jpg' %})">
   <div class="container wrap-tight">
     <div class="heading-container">
-      <h1 class="heading-xlarge heading-title">We are open.<br> The UK welcomes<br> international businesses.</h1>
+      <h1 class="heading-xlarge heading-title margin-top-0 margin-bottom-0">
+				We are open.<br> The UK welcomes<br> international businesses.
+			</h1>
     </div>
   </div>
 </section>
@@ -23,7 +27,12 @@
 			<div class="column-three-quarters">
 				<section class="grid-row">
 					<div class="column-seven-ninths article-content">
-						{{ page.tariffs_description|add_export_elements_classes }}
+						<h2 class="heading-large margin-top-0">
+							As a trading nation, we are outward-looking and thrive on the exchange of goods, ideas and people with the rest of the world.
+						</h2>
+						<p class="body-text">The UK’s decision to exit from the European Union does not change this.</p>
+						<p class="body-text">After the UK leaves the EU we will continue to be an open trading nation.</p>
+						<p class="body-text">We still welcome international business and have not turned our back on our friends and trading partners.</p>
 					</div>
 				</section>
 			</div>
@@ -36,80 +45,64 @@
 	</div>
 </section>
 
-<section id="invest-fas-section" class="invest-fas-section background-stone-gradient-bottom padding-vertical-60">
+<section id="international-invest-section" class="international-invest-section padding-vertical-60">
   <div class="container">
     <div class="card-grid">
-      <div class="column-quarter">
-        {% static 'images/placeholder.png' as card_image %}
-        <div class="card " id="invest-card">
-          <div class="card-image" role="image" style="background-image: url({% static 'images/placeholder.png' %});" id="invest-card-image"></div>
-          <div class="card-inner wrap-tight">
-            <h2 class="heading-large">Invest in the UK</h2>
-            <a href="#" class="link with-arrow">Capital investment in the UK</a>
+
+			<div class="column-half">
+				<div class="card" id="card-place-holder-1">
+          <div class="card-image" id="card-fas-image" role="image" style="background-image: url({% static 'images/placeholder.png' %});" aria-label="Buy from the UK" title="Buy from the UK">
+            <p class="visually-hidden">Buy from the UK</p>
+          </div>
+          <div class="card-inner">
+            <h4 class="heading-title heading-small">Title</h4>
+            <p class="body-text">Updated 01 July 2018</p>
+						<a href="#" class="button button-large button-blue">Contact us</a>
           </div>
         </div>
       </div>
-      <div class="column-quarter">
+
+      <div class="column-half">
         {% static 'images/placeholder.png' as card_image %}
-        <div class="card " id="fas-card">
+        <div class="card " id="card-place-holder-2">
           <div class="card-image" role="image" style="background-image: url({% static 'images/placeholder.png' %});" id="fas-card-image"></div>
-          <div class="card-inner wrap-tight padding-horizontal-45">
-            <h2 class="heading-large">Find a UK supplier</h2>
-            <a href="#" class="link with-arrow">Explore UK industries</a>
+          <div class="card-inner">
+            <h4 class="heading-title heading-small">Title</h4>
+            <p class="body-text">Updated 01 July 2018</p>
+						<a href="#" class="button button-large button-blue">Contact us</a>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
 
-<section id="tariffs-section" class="tariffs-section">
-  <div class="container">
-    <div class="grid-row">
-      <div class="column-full column-half-l margin-vertical-90 tariffs-image">
-        <img class="width-100" src="{{ page.tariffs_image.url }}" alt="">
-      </div>
-      <div class="column-full column-half-l margin-vertical-90 tariffs-content-wrapper">
-        <div class="padding-horizontal-45 wrap-tight tariffs-content">
-          <h2 class="heading-large">{{ page.tariffs_title }}</h2>
-          {{ page.tariffs_description|add_export_elements_classes }}
-          <a href="{{ page.tariffs_link }}" class="link with-arrow">CTA</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-</section>
-
-{% if page.related_pages %}
-<section id="news-events-section" class="news-events-section background-stone-30 padding-vertical-60">
-  <div class="container wrap-tight">
-    <h2 class="heading-large margin-bottom-45">{{ page.news_title }}</h2>
-    <div class="card-grid">
-
-      {% for related_page in page.related_pages %}
-        <div class="column-third-xl column-half-l column-full">
-          <div class="card" id="{{ related_page.meta.slug }}-card">
-            <a class="card-link" href="/international{{ related_page.full_path }}" id="{{ related_page.meta.slug }}-card-link">
-              <div class="card-image" role="image" {% if related_page.thumbnail %}style="background-image: url({{ related_page.thumbnail.url }});"{% endif %} id="{{ related_page.meta.slug }}-card-image"></div>
-              <div class="card-inner wrap-tight padding-horizontal-45">
-                {% if related_page.page_type == 'InternationalArticlePage' %}
-                  <p class="subheading">Article</p>
-                {% else %}
-                  <p class="subheading">Campaign</p>
-                {% endif %}
-                <h3 class="heading-large">{{ related_page.title }}</h3>
-                {% if related_page.teaser %}<p class="description">{{ related_page.teaser }}</p>{% endif %}
-              </div>
-            </a>
+			<div class="column-half">
+				<div class="card" id="card-buy-from-uk">
+          <div class="card-image" id="card-fas-image" role="image" style="background-image: url({% static 'images/landing_buy_from_uk_card.png' %});" aria-label="Buy from the UK" title="Buy from the UK">
+            <p class="visually-hidden">Buy from the UK</p>
+          </div>
+          <div class="card-inner">
+            <h3>Buy from the UK</h3>
+            <p>Get exclusive early access to profiles of high quality UK businesses ready to fulfill your demand.</p>
+            <a href="https://trade.great.gov.uk?lang=en-gb" rel="noopener noreferrer" target="_blank" class="button button-large button-blue">Find a Supplier</a>
           </div>
         </div>
-      {% endfor %}
+      </div>
+
+			<div class="column-half">
+				<div class="card" id="card-invest-uk">
+          <div class="card-image" id="card-fas-image" role="image" style="background-image: url({% static 'images/landing_invest_uk_card.png' %});" aria-label="Buy from the UK" title="Buy from the UK">
+            <p class="visually-hidden">Invest in the UK</p>
+          </div>
+          <div class="card-inner">
+            <h3>Invest in the UK</h3>
+            <p>Discover the UK’s wealth of investment opportunities and how the UK government will support your global ambition.</p>
+            <a href="https://invest.great.gov.uk" rel="noopener noreferrer" target="_blank" class="button button-large button-blue">See the potential</a>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>
 </section>
-{% endif %}
 {% endblock content %}
 
 {% block content_after %}
