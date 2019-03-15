@@ -69,6 +69,11 @@
     }
   }
 
+  .column-eight-ninths {
+    width: calc(100% / 9 * 8);
+    float: left;
+  }
+
   .study-visit-cta-section > .container {
     border-bottom: 1px solid $lightened-great-blue;
   }
@@ -95,6 +100,12 @@
 
 @media (max-width: 640px) {
   .landing-page {
+
+    .column-eight-ninths {
+      width: 100%;
+      float: none;
+    }
+
     .tariffs-content {
       padding: 0;
     }
